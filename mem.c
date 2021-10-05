@@ -44,3 +44,37 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	int			iterator;
+	const char	*str_ptr;
+
+	iterator = 0;
+	str_ptr = s;
+	while (iterator != n)
+	{
+		if (str_ptr[iterator] == c)
+			return (str_ptr);
+		++iterator;
+	}
+	return (NULL);
+}
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	const char	*str_1;
+	const char	*str_2;
+	int			iterator;
+
+	str_1 = s1;
+	str_2 = s2;
+	iterator = 0;
+	while (iterator != n)
+	{
+		if (str_1[iterator] != str_2[iterator])
+			return ((str_1[iterator] - str_2[iterator]));
+		++iterator;
+	}
+	return (0);
+}

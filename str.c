@@ -15,14 +15,14 @@ char	*ft_strchr(const char *s, int c)
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		iterator;
-	char	*lst_ptr;
+	int			iterator;
+	const char	*lst_ptr;
 
 	iterator = 0;
 	while (s[iterator] != '\0')
 	{
 		if (s[iterator] == c)
-			lst_ptr = s[iterator];
+			lst_ptr = &s[iterator];
 	}
 	if (s[iterator] == '\0' && c == '\0')
 		return (&s[iterator]);

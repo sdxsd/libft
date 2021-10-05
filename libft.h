@@ -1,9 +1,19 @@
-#ifndef _LIBFT_H_
-#define _LIBFT_H_
+#ifndef LIBFT_H
+#define LIBFT_H
 
-void ft_putchar_fd(char c, int fd);
-void ft_putstr_fd(char *s, int fd);
-void ft_putendl_fd(char *s, int fd);
-void ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+int		ft_isascii(int c);
+void	*ft_memset(void *b, int c, size_t len);
+void	bzero(void *s, size_t n);
+char	*strchr(const char *s, int c);
+int		ft_strlen(char *str);
+int		ft_islower(int c);
+int		ft_isupper(int c);
+int		ft_isdigit(int c);
+int		ft_isalpha(int c);
+int		ft_isalnum(int c);
 
-#endif /* LIBFT_H */
+#endif /*LIBFT_H*/

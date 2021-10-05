@@ -5,7 +5,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	unsigned char	ch;
 	char			*ptr;
 
-	ptr = &b;
+	ptr = b;
 	ch = c;
 	while (len != 0)
 	{
@@ -20,30 +20,27 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*ptr;
 
-	ptr = &s;
+	ptr = s;
 	while (n != 0)
 	{
-		*ptr = 0;
+		ptr[n] = 0;
 		n--;
 	}
-	return (s);
 }
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int		iterator;
-	int		*ptr;
-	int		*src_ptr;
-	void	*begin_ptr;
+	size_t			iterator;
+	const char		*src_ptr;
+	char			*dst_ptr;
 
-	ptr = &dst;
-	src_ptr = &src;
-	begin_ptr = &dst;
+	iterator = 0;
+	src_ptr = src;
+	dst_ptr = dst;
 	while (iterator != n)
 	{
-		*ptr = *src_ptr;
-		++ptr;
-		++src_ptr;
+		dst_ptr[iterator] = src_ptr[iterator];
 		++iterator;
 	}
+	return (dst);
 }

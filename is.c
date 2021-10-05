@@ -26,7 +26,7 @@ int	ft_isdigit(int c)
 
 int	ft_isalpha(int c)
 {
-	if (ft_islower(c) == 1 || ft_isalpha == 1)
+	if (ft_islower(c) == 1 || ft_isalpha(c) == 1)
 		return (TRUE);
 	else
 		return (FALSE);
@@ -34,7 +34,7 @@ int	ft_isalpha(int c)
 
 int	ft_isalnum(int c)
 {
-	if (isalpha(c) == 1 || isdigit(c) == 1)
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
 		return (TRUE);
 	else
 		return (FALSE);

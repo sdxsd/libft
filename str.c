@@ -1,9 +1,6 @@
 #include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	iterator;
 

@@ -13,13 +13,14 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 int		ft_isascii(int c);
 void	*ft_memset(void *b, int c, size_t len);
-void	bzero(void *s, size_t n);
-char	*strchr(const char *s, int c);
+void	ft_bzero(void *s, size_t n);
+char	*ft_strchr(const char *s, int c);
 int		ft_strlen(char *str);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 #endif

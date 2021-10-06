@@ -19,10 +19,13 @@ int	ft_atoi(char *str)
 	iterator = 0;
 	while (ft_isspace(str[iterator]) == 1)
 		iterator++;
-	if (str[iterator] == '-')
+	while (str[iterator] == '-' || str[iterator] == '+')
 	{
-		minus = TRUE;
-		iterator++;
+		if (str[iterator] == '-' && iterator <= 2)
+			minus = TRUE;
+		if (str[iterator] > 2)
+			return (nbr);
+		++iterator;
 	}
 	while (str[iterator] >= '0' && str[iterator] <= '9')
 	{

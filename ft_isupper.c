@@ -2,7 +2,7 @@
 
 int	ft_isupper(int c)
 {
-	if (c >= 101 && c <= 132)
+	if (c >= 'A' && c <= 'Z')
 		return (TRUE);
 	else
 		return (FALSE);

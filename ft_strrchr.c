@@ -13,7 +13,7 @@ char	*ft_strrchr(const char *s, int c)
 		++iterator;
 	}
 	if (s[iterator] == '\0' && c == '\0')
-		return (lst_ptr);
+		return (lst_ptr = (char *) s + iterator);
 	else
 		return (lst_ptr);
 }

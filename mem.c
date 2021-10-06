@@ -55,7 +55,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (iterator != n)
 	{
 		if (str_ptr[iterator] == c)
-			return ((void*) &str_ptr[iterator]);
+			return ((void *) &str_ptr[iterator]);
 		++iterator;
 	}
 	return (NULL);

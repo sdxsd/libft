@@ -2,13 +2,14 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	iterator;
+	int		iterator;
+	char	*loc;
 
 	iterator = 0;
 	while (s[iterator] != c && s[iterator] != '\0')
 		++iterator;
 	if (s[iterator] == c)
-		return (&s[iterator]);
+		return (loc = (char *) s + iterator);
 	else
 		return (NULL);
 }
@@ -16,16 +17,16 @@ char	*ft_strchr(const char *s, int c)
 char	*ft_strrchr(const char *s, int c)
 {
 	int			iterator;
-	const char	*lst_ptr;
+	char		*lst_ptr;
 
 	iterator = 0;
 	while (s[iterator] != '\0')
 	{
 		if (s[iterator] == c)
-			lst_ptr = &s[iterator];
+			lst_ptr = (char *) s + iterator;
 	}
 	if (s[iterator] == '\0' && c == '\0')
-		return (&s[iterator]);
+		return (lst_ptr);
 	else
 		return (lst_ptr);
 }

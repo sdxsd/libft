@@ -17,14 +17,13 @@ int	ft_atoi(char *str)
 
 	nbr = 0;
 	iterator = 0;
+	minus = 0;
 	while (ft_isspace(str[iterator]) == 1)
 		iterator++;
 	while (str[iterator] == '-' || str[iterator] == '+')
 	{
-		if (str[iterator] == '-' && iterator <= 2)
-			minus = TRUE;
-		if (str[iterator] > 2)
-			return (nbr);
+		if (str[iterator] == '-')
+			minus = -1;
 		++iterator;
 	}
 	while (str[iterator] >= '0' && str[iterator] <= '9')
@@ -33,7 +32,7 @@ int	ft_atoi(char *str)
 		nbr += (int)str[iterator] - '0';
 		iterator++;
 	}
-	if (minus == TRUE)
-		nbr = nbr - (nbr * 2);
+	if (minus == -1)
+		nbr = (nbr - (nbr * 2));
 	return (nbr);
 }

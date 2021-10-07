@@ -19,6 +19,7 @@ int		ft_strlen(char *str);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
+int		ft_strncmp(char *s1, char *s2, unsigned int n);
 
 // TO FUNCTIONS (to.c)
 int		ft_tolower(int c);

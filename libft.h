@@ -20,6 +20,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strdup(const char *s1);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 // TO FUNCTIONS (to.c)
 int		ft_tolower(int c);

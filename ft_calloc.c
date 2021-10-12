@@ -5,6 +5,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*block;
 
 	block = malloc(size * count);
+	if (!block)
+		return (NULL);
 	ft_bzero(block, (size * count));
 	return (block);
 }

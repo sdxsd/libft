@@ -4,7 +4,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	void	*tmp;
 
-	tmp = malloc(len);
+	tmp = ft_calloc(len, 1);
 	ft_memcpy(tmp, src, len);
 	ft_bzero(dst, len);
 	ft_memcpy(dst, tmp, len);

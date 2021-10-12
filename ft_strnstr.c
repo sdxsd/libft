@@ -20,5 +20,5 @@ char	*ft_strnstr(const char *hs, const char *ndl, size_t len)
 		}
 		++iterator;
 	}
-	return (NULL);
+	return (0);
 }

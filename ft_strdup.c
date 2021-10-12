@@ -2,14 +2,15 @@
 
 char	*ft_strdup(const char *s1)
 {
-	void	*dupe_str;
+	char	*dupe_str;
 
-	dupe_str = malloc(ft_strlen((char *)s1) + 1);
+	dupe_str = malloc(ft_strlen((char *)s1));
 	if (!dupe_str)
 		return (NULL);
 	else
 	{
 		ft_strncpy(dupe_str, (char *)s1, ft_strlen((char *)s1));
-		return ((char *) dupe_str);
+		dupe_str[ft_strlen((char *)s1)] = '\0';
+		return (dupe_str);
 	}
 }

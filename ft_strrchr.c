@@ -2,8 +2,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int			iterator;
-	char		*lst_ptr;
+	int					iterator;
+	char				*lst_ptr;
 
 	iterator = 0;
 	while (s[iterator] != '\0')
@@ -13,7 +13,10 @@ char	*ft_strrchr(const char *s, int c)
 		++iterator;
 	}
 	if (s[iterator] == '\0' && c == '\0')
-		return (lst_ptr = (char *) s + iterator);
+	{
+		lst_ptr = (char *) s + iterator;
+		return (lst_ptr);
+	}
 	else
 		return (lst_ptr);
 }

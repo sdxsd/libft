@@ -22,6 +22,7 @@ char	*ft_strchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 // TO FUNCTIONS (to.c)
 int		ft_tolower(int c);

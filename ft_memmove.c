@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:24:04 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 11:10:27 by keizerrijk       ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_memmove.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/13 10:24:04 by keizerrijk    #+#    #+#                 */
+/*   Updated: 2021/10/13 12:44:38 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	src_c = src;
 	if (dst > src)
 	{
-		dst_c += len;
-		src_c += len;
-		while (len > 0)
+		while (len)
 		{
-			--len;
-			*--dst_c = *--src_c;
+			len--;
+			dst_c[len] = src_c[len];
 		}
 	}
 	else

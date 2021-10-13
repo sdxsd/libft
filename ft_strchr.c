@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:23:03 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 10:23:04 by keizerrijk       ###   ########.fr       */
+/*   Updated: 2021/10/13 11:27:31 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

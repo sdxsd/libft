@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:24:34 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 10:24:35 by keizerrijk       ###   ########.fr       */
+/*   Updated: 2021/10/13 11:27:13 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:21:54 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 10:21:56 by keizerrijk       ###   ########.fr       */
+/*   Updated: 2021/10/13 11:27:40 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

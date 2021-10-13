@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:21:34 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 10:21:47 by keizerrijk       ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   libft.h                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
+/*   Updated: 2021/10/13 11:43:25 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ void	ft_putnbr_fd(int n, int fd);
 
 // STRING FUNCTIONS (str.c)
 char	*ft_strchr(const char *s, int c);
-int		ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
 
 // TO FUNCTIONS (to.c)
 int		ft_tolower(int c);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:23:21 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 10:23:21 by keizerrijk       ###   ########.fr       */
+/*   Updated: 2021/10/13 11:27:27 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

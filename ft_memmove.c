@@ -6,7 +6,7 @@
 /*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:24:04 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 10:29:28 by keizerrijk       ###   ########.fr       */
+/*   Updated: 2021/10/13 11:10:27 by keizerrijk       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		dst_c += len;
 		src_c += len;
-		while (len-- > 0)
+		while (len > 0)
+		{
+			--len;
 			*--dst_c = *--src_c;
+		}
 	}
 	else
-	{
 		ft_memcpy(dst, src, len);
-	}
 	return (dst);
 }

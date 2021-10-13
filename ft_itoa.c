@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: keizerrijk <keizerrijk@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 10:24:22 by keizerrijk        #+#    #+#             */
+/*   Updated: 2021/10/13 10:24:23 by keizerrijk       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_itoa(int n)
@@ -12,6 +24,7 @@ char	*ft_itoa(int n)
 
 	div = 0;
 	div_count = 0;
+	iterator = 0;
 	if (n < 10)
 	{
 		p_str = malloc(sizeof(char));
@@ -37,9 +50,10 @@ char	*ft_itoa(int n)
 				t_int /= 10;
 				--iterator_2;
 			}
-			--div_count;
+			div_count--;
 			str[iterator] = t_int + '0';
 			++iterator;
 		}
 	}
+	return ("c");
 }

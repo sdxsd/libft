@@ -1,59 +1,99 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:24:22 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 11:27:16 by wmaguire         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_itoa.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
+/*   Updated: 2021/10/14 18:54:10 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	ft_isneg(int n)
 {
-	void	*p_str;
-	char	*str;
-	int		div;
-	int		div_count;
-	int		iterator;
-	int		iterator_2;
-	int		t_int;
+	if (n < 0)
+		return (TRUE);
+	else
+		return (FALSE);
+}
 
-	div = 0;
+static int	ft_numlen(int n)
+{
+	int	div_count;
+
 	div_count = 0;
-	iterator = 0;
-	if (n < 10)
+	if (ft_isneg(n))
+		div_count++;
+	while (n > 10)
 	{
-		p_str = malloc(sizeof(char));
-		ft_memset(p_str, n + '0', 1);
-		return ((char *)p_str);
+		n /= 10;
+		++div_count;
+	}
+	return (div_count);
+}
+
+static char	*ft_below_ten(int n)
+{
+	void	*str;
+
+	if (ft_isneg(n))
+	{	
+		str = malloc(sizeof(char) * 3);
+		if (!str)
+			return (NULL);
+		ft_memset(str, '-', 1);
+		str++;
 	}
 	else
+		str = malloc(sizeof(char) * 2);
+	if (!str)
+		return (NULL);
+	ft_memset(str, n + '0', 1);
+	str++;
+	ft_memset(str, '\0', 1);
+	return ((char *)str);
+}
+
+static char	div_n(int n)
+{
+	while (n > 10)
 	{
-		div = n;
-		while (div > 10)
+		n /= 10;
+	}
+	return (n + '0');
+}
+
+char	*ft_itoa(int n)
+{
+	int		iterator;
+	int		div_count;
+	char	str[12];
+	char	*str_ptr;
+
+	if (n == -2147483648)
+		return ("-2147483648");
+	div_count = ft_numlen(n);
+	iterator = 0;
+	str_ptr = &str[0];
+	if (n < 10)
+		return (ft_below_ten(n));
+	else
+	{
+		if (ft_isneg(n))
 		{
-			div /= 10;
-			++div_count;
+			str[iterator] = '-';
+			iterator++;
 		}
-		p_str = malloc(sizeof(char) * div_count);
-		str = p_str;
 		while (iterator < div_count)
 		{
-			iterator_2 = div_count;
-			t_int = n;
-			while (iterator_2 > 0)
-			{
-				t_int /= 10;
-				--iterator_2;
-			}
-			div_count--;
-			str[iterator] = t_int + '0';
-			++iterator;
+			str[iterator] = div_n(n);
+			n /= 10;
+			iterator++;
 		}
+		str[iterator] = '\0';
 	}
-	return ("c");
+	return (str_ptr);
 }

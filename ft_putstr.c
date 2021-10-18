@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstclear.c                                      :+:    :+:            */
+/*   ft_putstr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/10/16 14:43:55 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/10/18 15:05:19 by wmaguire      ########   odam.nl         */
+/*   Created: 2021/10/18 15:09:06 by wmaguire      #+#    #+#                 */
+/*   Updated: 2021/10/18 15:36:42 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_putstr(char *str)
 {
+	int	iterator;
 
-	if (del == NULL || lst == NULL || *lst == NULL)
-		return ;
-	return ;
+	iterator = 0;
+	while (str[iterator] != '\0')
+		++iterator;
+	write(1, str, iterator);
 }

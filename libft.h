@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/16 14:44:26 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/10/18 18:00:11 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
+void	ft_putstr(char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 // TO FUNCTIONS (to.c)
 int		ft_tolower(int c);

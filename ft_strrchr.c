@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 10:22:16 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/19 10:52:54 by wmaguire         ###   ########.fr       */
+/*   Updated: 2021/10/19 11:28:27 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	iterator;
 	char	*ptr;
 
+	if (!s[0])
+		return (NULL);
 	iterator = 0;
 	while (c > 256)
 		c -= 256;
@@ -36,8 +38,7 @@ char	*ft_strrchr(const char *s, int c)
 /*
 int main()
 {
-	char *src = malloc(10);
-	ft_strncpy(src, "123456789", 10);
+	char *src = "";
 	printf("%s", ft_strrchr(src, 'a'));
 	return (0);
 }

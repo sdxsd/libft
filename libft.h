@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   libft.h                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/18 18:00:11 by wmaguire      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 10:21:34 by keizerrijk        #+#    #+#             */
+/*   Updated: 2021/10/19 12:04:33 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char));
 void	ft_putstr(char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 // TO FUNCTIONS (to.c)
 int		ft_tolower(int c);

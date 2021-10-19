@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/18 17:59:55 by wmaguire      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 10:24:22 by keizerrijk        #+#    #+#             */
+/*   Updated: 2021/10/18 19:19:32 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 	int		iterator;
 	int		neg;
 
-	str = malloc(ft_numlen(n));
+	str = malloc(ft_numlen(n) + 1);
 	if (!str)
 		return (NULL);
 	iterator = 0;

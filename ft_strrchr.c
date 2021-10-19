@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_strrchr.c                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/13 10:22:16 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/13 12:38:55 by wmaguire      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 10:22:16 by keizerrijk        #+#    #+#             */
+/*   Updated: 2021/10/19 10:52:54 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int					iterator;
-	char				*lst_ptr;
+	size_t	iterator;
+	char	*ptr;
 
 	iterator = 0;
-	if (ft_strlen(s) == 0)
-		return ((char *)s);
-	while (s[iterator] != '\0')
+	while (c > 256)
+		c -= 256;
+	while (s[iterator] && iterator < ft_strlen(s))
 	{
 		if (s[iterator] == c)
-			lst_ptr = (char *) s + iterator;
-		iterator++;
+			ptr = (char *)&s[iterator];
+		++iterator;
 	}
 	if (s[iterator] == '\0' && c == '\0')
-	{
-		lst_ptr = (char *) s + iterator;
-		return (lst_ptr);
-	}
-	else
-		return (lst_ptr);
+		return (ptr = (char *)&s[iterator]);
+	return (ptr);
 }
+
+/*
+int main()
+{
+	char *src = malloc(10);
+	ft_strncpy(src, "123456789", 10);
+	printf("%s", ft_strrchr(src, 'a'));
+	return (0);
+}
+*/

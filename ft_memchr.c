@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/13 10:24:18 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/20 16:45:38 by wmaguire      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 10:24:18 by keizerrijk        #+#    #+#             */
+/*   Updated: 2021/10/20 21:56:06 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (iterator < n)
 	{
 		if ((unsigned char)str_ptr[iterator] == (unsigned char)c)
-			return ((void *) &str_ptr[iterator]);
+			return ((void *)&str_ptr[iterator]);
 		++iterator;
 	}
 	return (NULL);

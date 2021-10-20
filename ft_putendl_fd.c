@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:23:51 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/13 12:34:58 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/10/20 16:36:58 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void	ft_putendl_fd(char *s, int fd)
 		ft_putchar_fd(s[iterator], fd);
 		++iterator;
 	}
-	++iterator;
 	ft_putchar_fd('\n', fd);
 }

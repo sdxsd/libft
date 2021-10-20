@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:25:06 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/13 11:27:08 by wmaguire         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_atoi.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/13 10:25:06 by keizerrijk    #+#    #+#                 */
+/*   Updated: 2021/10/20 16:51:27 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n' \
-	|| c == '\v' || c == '\f' || c == '\r')
+	|| c == '\v' || c == '\f' || c == '\r' || c == '\b')
 		return (TRUE);
 	else
 		return (FALSE);
@@ -35,15 +35,15 @@ int	ft_atoi(char *str)
 	{
 		if (str[iterator] == '-')
 			minus = -1;
-		if (str[iterator + 1] == '+' || str[iterator + 1] == '-')
-			return (0);
+		while (str[iterator + 1] == '+' || str[iterator + 1] == '-')
+			++iterator;
 		++iterator;
 	}
 	while (str[iterator] >= '0' && str[iterator] <= '9')
 	{
 		nbr *= 10;
 		nbr += (int)str[iterator] - '0';
-		iterator++;
+		++iterator;
 	}
 	if (minus == -1)
 		nbr = (nbr - (nbr * 2));

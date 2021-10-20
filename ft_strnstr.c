@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:22:23 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/19 11:45:01 by wmaguire         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_strnstr.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/13 10:22:23 by keizerrijk    #+#    #+#                 */
+/*   Updated: 2021/10/20 16:14:44 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *hs, const char *ndl, size_t len)
 	c_count = ft_strlen(ndl);
 	iterator = 0;
 	if (c_count == 0)
-		return ((char *) hs);
+		return ((char *)hs);
 	while (hs[iterator] != '\0' && iterator < len)
 	{
 		if (hs[iterator] == ndl[0])

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ft_strchr.c                                        :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/10/13 10:23:03 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/20 16:30:04 by wmaguire      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/13 10:23:03 by keizerrijk        #+#    #+#             */
+/*   Updated: 2021/10/26 15:00:21 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int		iterator;
 	char	*loc;
 
-	if (!s)
-		return (NULL);
 	iterator = 0;
 	while (s[iterator] != c && s[iterator] != '\0')
 		++iterator;

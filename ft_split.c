@@ -6,12 +6,11 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 13:22:31 by wmaguire          #+#    #+#             */
-/*   Updated: 2021/10/20 21:57:05 by wmaguire         ###   ########.fr       */
+/*   Updated: 2021/10/26 14:51:08 by wmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 static int	ft_wordcount(const char *s, char c)
 {

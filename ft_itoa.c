@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:24:22 by keizerrijk        #+#    #+#             */
-/*   Updated: 2021/10/18 19:19:32 by wmaguire         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_itoa.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
+/*   Updated: 2021/10/27 20:21:24 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,12 @@ static int	ft_isneg(int n)
 		return (FALSE);
 }
 
-static void	ft_revstr(char *str, int size)
-{
-	int		inc;
-	int		dec;
-	char	holder;
-
-	inc = 0;
-	dec = size - 1;
-	while (inc <= size / 2)
-	{
-		holder = str[inc];
-		str[inc] = str[dec];
-		str[dec] = holder;
-		--dec;
-		++inc;
-	}
-}
-
 static int	ft_numlen(int n)
 {
 	int	dc;
 
+	if (ft_isneg(n))
+		n = -n;
 	dc = 0;
 	while (n > 10)
 	{
@@ -51,22 +35,18 @@ static int	ft_numlen(int n)
 	return (dc);
 }
 
-char	*ft_itoa(int n)
+static void	ft_detnum(char *str, int n, int nstatus)
 {
-	char	*str;
-	int		iterator;
-	int		neg;
+	int	iterator;
+	int	numlen;
 
-	str = malloc(ft_numlen(n) + 1);
-	if (!str)
-		return (NULL);
+	numlen = ft_numlen(n);
 	iterator = 0;
-	if (ft_isneg(n))
+	if (nstatus)
 	{
 		ft_memset(&str[iterator], '-', 1);
-		n = -n;
 		iterator++;
-		neg = TRUE;
+		n = -n;
 	}
 	while (n > 10)
 	{
@@ -74,20 +54,34 @@ char	*ft_itoa(int n)
 		n /= 10;
 		++iterator;
 	}
-	if (n < 10)
-		ft_memset(&str[iterator], n + '0', 1);
-	if (neg == TRUE)
-		ft_revstr(&str[1], ft_strlen(str) - 1);
-	else
-		ft_revstr(&str[0], ft_strlen(str));
-	ft_memset(&str[++iterator], '\0', 1);
+	ft_memset(&str[iterator], (n % 10) + '0', 1);
+	ft_revstr(&str[0 + nstatus], ft_strlen(str) - nstatus);
+	ft_memset(&str[iterator + 1], '\0', 1);
+	return ;
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		iterator;
+
+	str = malloc(ft_numlen(n) + ft_isneg(n));
+	if (!str)
+		return (NULL);
+	iterator = 0;
+	ft_detnum(str, n, ft_isneg(n));
 	return (str);
 }
 
 /*
 int	main(void)
 {
-	ft_putstr(ft_itoa(2000));
+	//ft_putstr(ft_itoa(-1234));
+	//ft_putstr("\n");
+	//ft_putstr(ft_itoa(156));
+	ft_putstr("\n");
+	ft_putstr(ft_itoa(-0));
+	ft_putstr("\n");
 	return (0);
 }
 */

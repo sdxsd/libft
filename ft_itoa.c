@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/27 20:21:24 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/10/28 13:35:10 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,15 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-/*
+
 int	main(void)
 {
-	//ft_putstr(ft_itoa(-1234));
-	//ft_putstr("\n");
-	//ft_putstr(ft_itoa(156));
+	ft_putstr(ft_itoa(-1234));
+	ft_putstr("\n");
+	ft_putstr(ft_itoa(156));
 	ft_putstr("\n");
 	ft_putstr(ft_itoa(-0));
 	ft_putstr("\n");
 	return (0);
 }
-*/
+

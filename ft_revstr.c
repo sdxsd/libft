@@ -6,13 +6,13 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/27 18:40:04 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/10/27 20:13:57 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/10/28 13:59:17 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_revstr(char *str, int size)
+char	*ft_revstr(char *str, int size)
 {
 	int		iter_1;
 	int		iter_2;
@@ -28,6 +28,7 @@ void	ft_revstr(char *str, int size)
 		iter_2--;
 	}
 	free(hold_str);
+	return (str);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/27 18:40:34 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/10/28 13:59:52 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_strndup(const char *s1, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
-void	ft_revstr(char *str, int size);
+char	*ft_revstr(char *str, int size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 

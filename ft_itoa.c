@@ -6,11 +6,12 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/28 13:35:10 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/10/28 14:17:23 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 static int	ft_isneg(int n)
 {
@@ -26,7 +27,7 @@ static int	ft_numlen(int n)
 
 	if (ft_isneg(n))
 		n = -n;
-	dc = 0;
+	dc = 2;
 	while (n > 10)
 	{
 		n /= 10;
@@ -35,53 +36,38 @@ static int	ft_numlen(int n)
 	return (dc);
 }
 
-static void	ft_detnum(char *str, int n, int nstatus)
+char	*ft_itoa(int n)
 {
-	int	iterator;
-	int	numlen;
+	int		iterator;
+	int		nstatus;
+	char	*str;
 
-	numlen = ft_numlen(n);
 	iterator = 0;
+	nstatus = ft_isneg(n);
+	str = malloc(ft_numlen(n) + ft_isneg(n));
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return ("0");
+	if (!str)
+		return (NULL);
 	if (nstatus)
-	{
-		ft_memset(&str[iterator], '-', 1);
-		iterator++;
 		n = -n;
-	}
-	while (n > 10)
+	while (n > 0)
 	{
-		ft_memset(&str[iterator], (n % 10) + '0', 1);
+		str[iterator] = (n % 10) + '0';
 		n /= 10;
 		++iterator;
 	}
-	ft_memset(&str[iterator], (n % 10) + '0', 1);
-	ft_revstr(&str[0 + nstatus], ft_strlen(str) - nstatus);
-	ft_memset(&str[iterator + 1], '\0', 1);
-	return ;
+	if (nstatus)
+		str[iterator] = '-';
+	str[iterator + nstatus] = '\0';
+	return (str = ft_revstr(str, ft_strlen(str)));
 }
 
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		iterator;
-
-	str = malloc(ft_numlen(n) + ft_isneg(n));
-	if (!str)
-		return (NULL);
-	iterator = 0;
-	ft_detnum(str, n, ft_isneg(n));
-	return (str);
-}
-
-
+/*
 int	main(void)
 {
-	ft_putstr(ft_itoa(-1234));
-	ft_putstr("\n");
-	ft_putstr(ft_itoa(156));
-	ft_putstr("\n");
-	ft_putstr(ft_itoa(-0));
-	ft_putstr("\n");
-	return (0);
+	ft_putstr(ft_itoa(INT_MIN));
 }
-
+*/

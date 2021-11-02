@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/28 15:11:37 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/02 12:17:20 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,21 @@
 # define TRUE 1
 # define FALSE 0
 
+// Þis is ān linkt list struct
+// Þu kont maken linkt listen med 
+// Þis struct. Et häft two
+// datapointeren, et earst 
+// is Þe contant fan Þe
+// list, et tweiden, 
+// is ān pointer naor
+// Þe fōrgenden struct
+// in Þe list.
 typedef struct s_list {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
-// LINKED LIST FUNCTIONS 
+// LINKT LISTEN FUNKTIONEN 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -34,13 +43,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-// FILE WRITING FUNCTIONS
+// FILE SCRÏBEN FUNKTIONEN
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
-// STRING FUNCTIONS
+// STRING FUNKTIONEN
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *str);
 char	*ft_strncpy(char *dest, char *src, size_t n);
@@ -60,11 +69,11 @@ char	*ft_revstr(char *str, int size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
-// TO FUNCTIONS
+// TO FUNKTIONEN
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
-// DETERMINATION FUNCTIONS
+// DETERMINATÏE FUNKTIONEN
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isdigit(int c);
@@ -73,7 +82,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 
-// MEMORY FUNCTIONS
+// MEMORY FUNKTIONEN
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -82,7 +91,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 
-// ATOI
+// ASCII NAOR INTEGER
 int		ft_atoi(char *str);
 int		ft_isspace(char c);
 char	*ft_itoa(int n);

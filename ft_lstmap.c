@@ -6,25 +6,37 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/28 15:10:58 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/10/28 15:20:41 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/02 12:40:24 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Þe funktion ft_lstmap
+// maken ān nīwe list out
+// Þe sucessive gebrouk
+// fan Þe funktion (f)
+// ān et retürnt Þe
+// nīwe list naor Þe sender.
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*ptr;
-	t_list	*start;
+	t_list	*n_lst;
+	t_list	*n_element;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	ptr = ft_lstnew((*f)(lst -> content));
-	start = ptr;
-	while (lst -> next != NULL)
+	n_lst = (void *)0;
+	while (lst)
 	{
-		ptr -> next = ft_lstnew((*f)(lst -> content));
+		n_element = ft_lstnew((*f)(lst ->content));
+		if (!n_element)
+		{
+			ft_lstclear(&n_lst, (*del));
+			return (NULL);
+		}
+		ft_lstadd_back(&n_lst, n_element);
 		lst = lst -> next;
 	}
-	return (ptr);
+	return (n_lst);
 }

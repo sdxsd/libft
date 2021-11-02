@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/28 15:10:58 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/11/02 16:48:02 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/02 16:50:20 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 // ān et retürnt Þe
 // nīwe list nær Þe sender.
 
+/*
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*n_lst;
@@ -37,4 +38,24 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst -> next;
 	}
 	return (n_lst);
+}
+*/
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new;
+	t_list	*new_head;
+	new_head = NULL;
+	while (lst)
+	{
+		new = ft_lstnew((*f)(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&new_head, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_head, new);
+		lst = lst->next;
+	}
+	return (new_head);
 }

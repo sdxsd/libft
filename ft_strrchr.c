@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:22:16 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/20 16:08:29 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/02 17:33:55 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ char	*ft_strrchr(const char *s, int c)
 	if (!s[0])
 		return (NULL);
 	iterator = 0;
-	while (c > 256)
-		c -= 256;
 	while (s[iterator] && iterator < ft_strlen(s))
 	{
-		if (s[iterator] == c)
+		if (s[iterator] == (unsigned char)c)
 			ptr = (char *)&s[iterator];
 		++iterator;
 	}
-	if (s[iterator] == '\0' && c == '\0')
+	if (s[iterator] == '\0' && (unsigned char)c == '\0')
 		return (ptr = (char *)&s[iterator]);
 	return (ptr);
 }

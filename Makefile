@@ -8,7 +8,6 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 BONUS_FILES = \
-
 CFILES = \
 		ft_atoi.c \
 		ft_itoa.c \
@@ -72,7 +71,7 @@ re: libft
 	ar -rc libft.a $(OFILES)
 
 bonus:
-	
+
 
 clean:
 	rm $(OFILES) $(NAME)

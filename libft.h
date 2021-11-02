@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/02 12:17:20 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/02 18:49:29 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 
-// ASCII NAOR INTEGER
+// ASCII NÆR INTEGER
 int		ft_atoi(char *str);
 int		ft_isspace(char c);
 char	*ft_itoa(int n);

@@ -6,13 +6,13 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:25:06 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/20 16:51:27 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/02 18:54:23 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n' \
 	|| c == '\v' || c == '\f' || c == '\r' || c == '\b')

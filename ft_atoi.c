@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:25:06 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/02 18:54:23 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 11:31:32 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_isspace(char c)
 		return (FALSE);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	iterator;
 	int	nbr;
@@ -35,8 +35,8 @@ int	ft_atoi(char *str)
 	{
 		if (str[iterator] == '-')
 			minus = -1;
-		while (str[iterator + 1] == '+' || str[iterator + 1] == '-')
-			++iterator;
+		if (str[iterator + 1] == '+' || str[iterator + 1] == '-')
+			return (0);
 		++iterator;
 	}
 	while (str[iterator] >= '0' && str[iterator] <= '9')

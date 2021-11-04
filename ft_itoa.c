@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/10/28 14:17:23 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 11:21:19 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,3 @@ char	*ft_itoa(int n)
 	str[iterator + nstatus] = '\0';
 	return (str = ft_revstr(str, ft_strlen(str)));
 }
-
-/*
-int	main(void)
-{
-	ft_putstr(ft_itoa(INT_MIN));
-}
-*/

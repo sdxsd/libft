@@ -8,7 +8,15 @@ CC = clang
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 BONUS_FILES = \
-
+		ft_lstadd_back_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c 
 CFILES = \
 		ft_atoi.c \
 		ft_itoa.c \
@@ -59,11 +67,9 @@ CFILES = \
 		ft_putstr_fd.c \
 		ft_strncmp.c
 OFILES = $(CFILES:.c=.o)
+B_OFILES = $(BONUS_FILES:.c=.o)
 
-all: libft re
-
-%.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+all: re
 
 libft:
 	$(CC) $(CFLAGS) -c $(CFILES)
@@ -72,10 +78,14 @@ re: libft
 	ar -rc libft.a $(OFILES)
 
 bonus:
+	$(CC) $(CFLAGS) -c $(BONUS_FILES)
+	ar -rc libft.a $(B_OFILES)
 
+fclean: clean 
+	rm $(NAME)
 
 clean:
-	rm $(OFILES) $(NAME)
+	rm $(OFILES)
 	
 so: libft
 	$(CC) $(CFLAGS) $(OFILES) -o libft.so

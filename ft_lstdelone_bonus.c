@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstdelone.c                                     :+:    :+:            */
+/*   ft_lstdelone_bonus.c                               :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/16 14:40:12 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/10/16 14:41:58 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 12:21:30 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	(*del)(lst -> content);
+	free(lst);
 }

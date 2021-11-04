@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 15:55:44 by wmaguire          #+#    #+#             */
-/*   Updated: 2021/10/21 16:37:42 by wmaguire         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_strtrim.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/21 15:55:44 by wmaguire      #+#    #+#                 */
+/*   Updated: 2021/11/04 11:54:32 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (NULL);
 	iter = 0;
 	n_strlen = ft_deter_strlen(s1, set);
-	str = malloc(n_strlen + 1);
-	if (!str)
-		return (NULL);
 	while (ft_setcmp(s1[iter], set))
 		iter++;
 	str = ft_strndup(&s1[iter], n_strlen);
+	if (!str)
+		return (NULL);
 	return (str);
 }
 

@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/04 11:21:19 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 11:59:18 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ char	*ft_itoa(int n)
 
 	iterator = 0;
 	nstatus = ft_isneg(n);
-	str = malloc(ft_numlen(n) + ft_isneg(n));
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
-		return ("0");
-	if (!str)
-		return (NULL);
+		return (ft_strdup("0"));
 	if (nstatus)
 		n = -n;
+	str = malloc(ft_numlen(n) + ft_isneg(n));
+	if (!str)
+		return (NULL);
 	while (n > 0)
 	{
 		str[iterator] = (n % 10) + '0';

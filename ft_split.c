@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wmaguire <wmaguire@student.codam.nl>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 13:22:31 by wmaguire          #+#    #+#             */
-/*   Updated: 2021/10/26 14:51:08 by wmaguire         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ft_split.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/10/19 13:22:31 by wmaguire      #+#    #+#                 */
+/*   Updated: 2021/11/04 12:40:11 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,20 @@ static int	ft_gndl(const char *s, char c)
 
 	iterator = 0;
 	while (s[iterator] != c && s[iterator])
-		++iterator;
+		iterator++;
 	return (iterator);
+}
+
+char	**ft_clean_split(char **s_array)
+{
+	while (s_array)
+	{
+		if (*s_array)
+			free(*s_array);
+		s_array += 1;
+	}
+	free(s_array);
+	return ((char **)0x0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -62,7 +74,7 @@ char	**ft_split(char const *s, char c)
 		{
 			*s_array = ft_strndup(&s[iterator], ft_gndl(&s[iterator], c));
 			if (!*s_array)
-				return (NULL);
+				return (ft_clean_split(s_array - iterator));
 			iterator += ft_gndl(&s[iterator], c);
 			s_array += 1;
 		}

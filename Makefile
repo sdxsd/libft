@@ -1,8 +1,8 @@
-# Þe makefile mæken þe bibliotëk out þe .c filen. 
+# Þe makefile mæken þe bibliotëk out þe .c filen.
 # Et workt med ān system fan funktionen ānd underfunktionen.
 # Ƿen þe makefile habban gecompilerd þe .c filen naor .o filen
-# et mæken þan ān nïwe arkive file med alle þe .c filen. 
-# Þe "clean" funktion reweiderd alle .o .a af .so filen. 
+# et mæken þan ān nïwe arkive file med alle þe .c filen.
+# Þe "clean" funktion reweiderd alle .o .a af .so filen.
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
@@ -16,7 +16,7 @@ BONUS_FILES = \
 		ft_lstlast_bonus.c \
 		ft_lstmap_bonus.c \
 		ft_lstnew_bonus.c \
-		ft_lstsize_bonus.c 
+		ft_lstsize_bonus.c
 CFILES = \
 		ft_atoi.c \
 		ft_itoa.c \
@@ -60,19 +60,19 @@ CFILES = \
 OFILES = $(CFILES:.c=.o)
 B_OFILES = $(BONUS_FILES:.c=.o)
 
-all: libft
+all: $(NAME)
 
-libft: $(OFILES)
+$(NAME): $(OFILES)
 	@ar -rcs $(NAME) $?
 	@echo "COMPILED ARCHIVE FILE"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $<
 	@echo COMPILED: $<
-	
+
 re: fclean all
 
-bonus: libft 
+bonus: $(NAME)
 	@echo "COMPILING BONUS"
 	@$(CC) $(CFLAGS) -c $(BONUS_FILES)
 	@echo "COMPILED BONUS"
@@ -89,6 +89,6 @@ clean:
 	@rm -f $(B_OFILES)
 	@rm -f a.out
 	@echo "CLEANED UP"
-	
-so: libft
+
+so: $(NAME)
 	$(CC) $(CFLAGS) $(OFILES) -o libft.so

@@ -52,7 +52,6 @@ CFILES = \
 		ft_strlen.c \
 		ft_toupper.c \
 		ft_isprint.c \
-		ft_putstr.c \
 		ft_strmapi.c \
 		ft_isupper.c \
 		ft_putstr_fd.c \
@@ -61,23 +60,35 @@ CFILES = \
 OFILES = $(CFILES:.c=.o)
 B_OFILES = $(BONUS_FILES:.c=.o)
 
-all: re bonus
+all: libft
 
-libft:
-	$(CC) $(CFLAGS) -c $(CFILES)
+libft: $(OFILES)
+	@ar -rcs $(NAME) $?
+	@echo "COMPILED ARCHIVE FILE"
+
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $<
+	@echo COMPILED: $<
 	
-re: libft
-	ar -rc libft.a $(OFILES)
+re: fclean all
 
-bonus:
-	$(CC) $(CFLAGS) -c $(BONUS_FILES)
-	ar -rc libft.a $(B_OFILES)
+bonus: libft 
+	@echo "COMPILING BONUS"
+	@$(CC) $(CFLAGS) -c $(BONUS_FILES)
+	@echo "COMPILED BONUS"
+	@echo "ARCHIVING BONUS"
+	@ar -rc libft.a $(B_OFILES)
+	@echo "ARCHIVED BONUS"
 
-fclean: clean 
-	rm $(NAME)
+fclean: clean
+	@rm -f $(NAME)
+	@echo "DEEP CLEANING"
 
 clean:
-	rm $(OFILES) $(B_OFILES)
+	@rm -f $(OFILES)
+	@rm -f $(B_OFILES)
+	@rm -f a.out
+	@echo "CLEANED UP"
 	
 so: libft
 	$(CC) $(CFLAGS) $(OFILES) -o libft.so

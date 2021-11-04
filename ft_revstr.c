@@ -6,11 +6,12 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/27 18:40:04 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/10/28 13:59:17 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 13:36:52 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_revstr(char *str, int size)
 {

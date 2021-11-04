@@ -6,12 +6,13 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:24:22 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/04 11:59:18 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 13:36:30 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
+#include <stdlib.h>
 
 static int	ft_isneg(int n)
 {
@@ -62,5 +63,5 @@ char	*ft_itoa(int n)
 	if (nstatus)
 		str[iterator] = '-';
 	str[iterator + nstatus] = '\0';
-	return (str = ft_revstr(str, ft_strlen(str)));
+	return (ft_revstr(str, ft_strlen(str)));
 }

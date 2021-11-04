@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/04 12:04:59 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/11/04 12:09:39 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/04 12:30:55 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	iterator = 0;
 	while (s[iterator] != '\0')
 	{
-		(*f)(iterator, s);
+		(*f)(iterator, s + iterator);
 		iterator++;
 	}
 }

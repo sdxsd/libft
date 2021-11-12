@@ -67,6 +67,8 @@ char	*ft_revstr(char *str, int size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
 
 // TO FUNKTIONEN
 int		ft_tolower(int c);

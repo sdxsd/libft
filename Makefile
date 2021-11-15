@@ -58,6 +58,7 @@ CFILES = \
 		ft_striteri.c \
 		ft_putstr.c \
 		ft_putchar.c \
+		ft_putnbr.c \
 		ft_strncmp.c
 OFILES = $(CFILES:.c=.o)
 B_OFILES = $(BONUS_FILES:.c=.o)

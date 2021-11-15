@@ -6,13 +6,12 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/04 13:42:49 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/15 11:36:44 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-//# include <unistd.h>
 # include <stddef.h>
 # define TRUE 1
 # define FALSE 0
@@ -95,5 +94,6 @@ void	*ft_calloc(size_t count, size_t size);
 // ASCII NÆR INTEGER AF INTEGER NÆR ASCII
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
+void	ft_putnbr(int nb);
 
 #endif

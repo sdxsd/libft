@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/11 15:45:14 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/11/11 15:45:23 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/15 18:03:10 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	ft_putstr(char *str)
 {
 	int	iterator;
 
+	if (!str)
+	{
+		ft_putstr("(null)");
+		return ;
+	}
 	iterator = 0;
 	while (str[iterator] != '\0')
 	{

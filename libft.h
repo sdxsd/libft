@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/16 17:27:20 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/16 17:50:47 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ void	ft_putnbr(int nb);
 
 // INTEGER FUNKTIONEN
 size_t	ft_revnum(size_t nb);
+size_t	ft_numlen_t(size_t n);
 
 #endif

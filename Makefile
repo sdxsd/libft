@@ -60,6 +60,7 @@ CFILES = \
 		ft_putchar.c \
 		ft_putnbr.c \
 		ft_revnum.c \
+		ft_numlen_t.c \
 		ft_strncmp.c
 OFILES = $(CFILES:.c=.o)
 B_OFILES = $(BONUS_FILES:.c=.o)

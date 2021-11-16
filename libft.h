@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/13 10:21:34 by keizerrijk    #+#    #+#                 */
-/*   Updated: 2021/11/15 11:36:44 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/16 17:27:20 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,8 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
 void	ft_putnbr(int nb);
+
+// INTEGER FUNKTIONEN
+size_t	ft_revnum(size_t nb);
 
 #endif

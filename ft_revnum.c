@@ -6,7 +6,7 @@
 /*   By: wmaguire <wmaguire@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/16 17:23:04 by wmaguire      #+#    #+#                 */
-/*   Updated: 2021/11/16 17:26:43 by wmaguire      ########   odam.nl         */
+/*   Updated: 2021/11/16 17:29:52 by wmaguire      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ size_t	ft_revnum(size_t nb)
 	size_t	rem;
 	size_t	reversed;
 
+	reversed = 0;
 	while (nb != 0)
 	{
 		rem = nb % 10;

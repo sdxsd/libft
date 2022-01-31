@@ -102,13 +102,13 @@ size_t	ft_revnum(size_t nb);
 size_t	ft_numlen_t(size_t n);
 
 // GET_NEXT_LINE FUNKTIONEN
-void    *ft_calloc(size_t count, size_t size);
-char    *gnl_strncpy(char *dest, const char *src, size_t n);
-char    *merge(char **buf_1, char **buf_2);
-char    *get_next_line(int fd);
-char    *gnl_strndup(const char *s1, size_t len);
-char    *gnl_strjoin(char const *s1, char const *s2);
-size_t  ft_strlen(const char *str);
+void	*ft_calloc(size_t count, size_t size);
+char	*gnl_strncpy(char *dest, const char *src, size_t n);
+char	*merge(char **buf_1, char **buf_2);
+char	*get_next_line(int fd);
+char	*gnl_strndup(const char *s1, size_t len);
+char	*gnl_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *str);
 char	*get_next_line(int fd);
 
 #endif

@@ -63,7 +63,8 @@ CFILES = \
 		ft_numlen_t.c \
 		ft_strncmp.c \
 		get_next_line.c \
-		get_next_line_utils.c
+		get_next_line_utils.c \
+		ft_charchk.c
 OFILES = $(CFILES:.c=.o)
 B_OFILES = $(BONUS_FILES:.c=.o)
 

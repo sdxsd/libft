@@ -64,7 +64,9 @@ CFILES = \
 		ft_strncmp.c \
 		get_next_line.c \
 		get_next_line_utils.c \
-		ft_charchk.c
+		ft_charchk.c \
+		ft_printf.c \
+		ft_printf_utils.c
 OFILES = $(CFILES:.c=.o)
 B_OFILES = $(BONUS_FILES:.c=.o)
 

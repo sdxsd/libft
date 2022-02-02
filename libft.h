@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+# include <stdarg.h>
 # define BUFFER_SIZE 1024
 # define TRUE 1
 # define FALSE 0
@@ -109,5 +110,15 @@ char	*get_next_line(int fd);
 char	*gnl_strndup(const char *s1, size_t len);
 char	*gnl_strjoin(char const *s1, char const *s2);
 char	*get_next_line(int fd);
+
+// PRINTF FUNKTIONEN
+int		ft_printf(const char *fmt, ...);
+int		handle_variable(const char spec, va_list arglist);
+int		ft_puthex(size_t nb, unsigned int mode);
+int		ft_putvoid(size_t ptr);
+int		ft_unsigned_putnbr(unsigned int nb);
+int		ft_putstr_len(char *str);
+int		ft_putnbr_len(int nb);
+int		ft_putchar_len(char c);
 
 #endif

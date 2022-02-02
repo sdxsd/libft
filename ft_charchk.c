@@ -14,8 +14,14 @@
 
 int	ft_charchk(int tc, char *dict)
 {
-	while (*dict++ != '\0')
-		if (tc == *dict)
+	int	iterator;
+
+	iterator = 0;
+	while (dict[iterator] != '\0')
+	{
+		if (tc == dict[iterator])
 			return (1);
+		iterator++;
+	}
 	return (0);
 }

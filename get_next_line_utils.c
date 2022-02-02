@@ -40,25 +40,6 @@ A program is free software if users have all of these freedoms.
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*block;
-	char	*ptr;
-	size_t	iterator;
-
-	iterator = 0;
-	block = malloc(size * count);
-	if (!block)
-		return (NULL);
-	ptr = block;
-	while (iterator < size * count)
-	{
-		ptr[iterator] = 0;
-		iterator++;
-	}
-	return (block);
-}
-
 char	*gnl_strncpy(char *dest, const char *src, size_t n)
 {
 	size_t	iterator;
@@ -87,16 +68,6 @@ char	*gnl_strndup(const char *s1, size_t len)
 	gnl_strncpy(dupe_str, s1, len);
 	dupe_str[len] = '\0';
 	return (dupe_str);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	iterator;
-
-	iterator = 0;
-	while (str[iterator] != '\0')
-		++iterator;
-	return (iterator);
 }
 
 char	*gnl_strjoin(char const *s1, char const *s2)

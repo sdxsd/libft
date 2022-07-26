@@ -120,5 +120,6 @@ int		ft_unsigned_putnbr(unsigned int nb);
 int		ft_putstr_len(char *str);
 int		ft_putnbr_len(int nb);
 int		ft_putchar_len(char c);
+void	ft_putnbr_base(int n, int base);
 
 #endif

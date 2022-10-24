@@ -39,7 +39,7 @@ typedef struct s_vector {
 	size_t			index;
 	void			*data;
 	struct s_vector	*next;
-	struct s_vector *previous;
+	struct s_vector	*previous;
 }	t_vector;
 
 // LINKT LISTEN FUNKTIONEN

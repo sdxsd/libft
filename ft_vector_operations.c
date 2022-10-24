@@ -65,7 +65,8 @@ void	vector_pop_back(t_vector *head, void (*dealloc) (void *))
 {
 	head = vector_get_last(head);
 	head->previous->next = NULL;
-	dealloc(head->data);
+	if (dealloc && head->data)
+		dealloc(head->data);
 	free(head);
 }
 
@@ -87,7 +88,8 @@ t_vector	*vector_pop_front(t_vector *head, void (*dealloc) (void *))
 	head = vector_get_first(head);
 	head->next->previous = NULL;
 	new_head = head->next;
-	dealloc(head->data);
+	if (dealloc && head->data)
+		dealloc(head->data);
 	update_indices(head, 0);
 	free(head);
 	return (new_head);

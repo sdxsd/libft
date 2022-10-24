@@ -70,10 +70,11 @@ void	vector_pop_back(t_vector *head, void (*dealloc) (void *))
 	free(head);
 }
 
-// NOTE: Always gets first element.
+// NOTE: Requires first element.
 t_vector	*vector_push_front(t_vector **head, t_vector *new)
 {
-	head = vector_get_first(*head);
+	if ((*head)->index != 0)
+		return (NULL);
 	(*head)->previous = new;
 	new->next = *head;
 	new->index = 0;

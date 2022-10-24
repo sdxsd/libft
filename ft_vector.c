@@ -40,13 +40,14 @@ A program is free software if users have all of these freedoms.
 #include "libft.h"
 #include <stdlib.h>
 
-void	free_vector(t_vector *vec, void (*dealloc) (void *))
+void	*free_vector(t_vector *vec, void (*dealloc) (void *))
 {
 	if (dealloc && vec->data)
 		dealloc(vec->data);
 	if (vec->next)
 		free_vector(vec->next, dealloc);
 	free(vec);
+	return (NULL);
 }
 
 t_vector	*new_vector_element(t_vector *prev, size_t idx)

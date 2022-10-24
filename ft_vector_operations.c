@@ -71,13 +71,14 @@ void	vector_pop_back(t_vector *head, void (*dealloc) (void *))
 }
 
 // NOTE: Always gets first element.
-t_vector	*vector_push_front(t_vector *head, t_vector *new)
+t_vector	*vector_push_front(t_vector **head, t_vector *new)
 {
-	head = vector_get_first(head);
-	head->previous = new;
-	new->next = head;
+	head = vector_get_first(*head);
+	(*head)->previous = new;
+	new->next = *head;
 	new->index = 0;
-	update_indices(head, 1);
+	update_indices(*head, 1);
+	*head = new;
 	return (new);
 }
 

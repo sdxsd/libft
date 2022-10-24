@@ -147,7 +147,7 @@ int			vector_size(t_vector *vec);
 // VEKTOR OPERATION FUNKTIONEN
 t_vector	*vector_push_back(t_vector *head, t_vector *new);
 void		vector_pop_back(t_vector *head, void (*dealloc) (void *));
-t_vector	*vector_push_front(t_vector *head, t_vector *new);
+t_vector	*vector_push_front(t_vector **head, t_vector *new);
 t_vector	*vector_pop_front(t_vector *head, void (*dealloc) (void *));
 
 #endif

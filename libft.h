@@ -139,4 +139,9 @@ t_vector	*vec_get_element(t_vector *head, size_t idx);
 t_vector	*new_vector_element(t_vector *prev, size_t idx);
 void		*free_vector(t_vector *head, void (*dealloc) (void *));
 
+// VEKTOR NAVI FUNKTIONEN
+t_vector	*vector_get_last(t_vector *vec);
+t_vector	*vector_get_first(t_vector *vec);
+int	vector_size(t_vector *vec);
+
 #endif

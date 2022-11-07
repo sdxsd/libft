@@ -41,6 +41,7 @@ A program is free software if users have all of these freedoms.
 #include <stdlib.h>
 
 // NOTE: Removes element of the list if the data *d matches the reference *dr.
+// Contains memory leaks as content is not freed.
 void	ft_lst_rm_if(t_list **l, void *dr, int (*cmp)(void *d, void *dr))
 {
 	t_list	*tmp;

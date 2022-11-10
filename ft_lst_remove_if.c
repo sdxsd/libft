@@ -42,6 +42,21 @@ A program is free software if users have all of these freedoms.
 
 // NOTE: Removes element of the list if the data *d matches the reference *dr.
 // Contains memory leaks as content is not freed.
+// Functions as so:
+// Three variables are declared.
+// One hold a temporary pointer to curr->next.
+// One to hold the prev element in the list.
+// One to hold the current element being operated upon.
+// A loop is entered and continued so long as curr is not a null pointer.
+// If the data being compared matches then the following.
+// tmp is set to hold the next element so that curr can be freed without
+// losing the list.
+// If there is no previous element, then the previous element is set to tmp->next
+// so that the head of the list remains.
+// If there is a previous value, its next element is set to be curr->next aka tmp.
+// curr is then set to tmp and the loop is repeated.
+// If the data being compared does not match then
+// prev is set to curr and curr is iterated to the next value.
 void	ft_lst_rm_if(t_list **l, void *dr, int (*cmp)(void *d, void *dr))
 {
 	t_list	*tmp;

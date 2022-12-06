@@ -57,6 +57,7 @@ t_vector	*vector_new(void *data)
 int	vector_remove(t_vector *head, int idx, void (*dealloc)(void *))
 {
 	t_vector *element;
+	t_vector *element_next;
 
 	if (head == NULL || idx > vector_size(head) || idx < 0)
 		return (FALSE);
@@ -64,11 +65,13 @@ int	vector_remove(t_vector *head, int idx, void (*dealloc)(void *))
 	element = vec_get_element(head, idx);
 	if (!element)
 		return (FALSE);
-	element->previous->next = element->next;
-	element->next->previous = element->previous;
+	element_next = element->next;
+	element->previous->next = element_next;
+	element_next->previous = element->previous;
 	if (dealloc)
 		dealloc(element->data);
 	free(element);
+	update_indices(element_next, 0);
 	return (TRUE);
 }
 
@@ -92,5 +95,7 @@ int	vector_insert(t_vector *head, int idx, void *content)
 	new->next = element;
 	new->previous = element->previous;
 	element->previous = new;
+	new->index = element->index;
+	update_indices(element, 1);
 	return (TRUE);
 }

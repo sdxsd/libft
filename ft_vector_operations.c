@@ -40,7 +40,8 @@ A program is free software if users have all of these freedoms.
 #include "libft.h"
 #include <stdlib.h>
 
-static void	update_indices(t_vector *vec, int arg)
+// Non-negative integer to increment, negative integer to decrement.
+void	update_indices(t_vector *vec, int arg)
 {
 	if (arg)
 		vec->index++;
